@@ -5,3 +5,29 @@
 // take user input and render svg
 // print 'generated logo.svg' to console
 // open logo.svg in browser shows logo
+
+const inquirer = require('inquirer');
+
+inquirer.prompt([
+    {
+        type: 'input',
+        name: 'text',
+        message: 'What is your text? Note: 3 characters max.'
+    }, 
+    {
+        type: 'input',
+        name: 'textColor',
+        message: 'What is your text color?'
+    },
+    {
+        type: 'list',
+        name: 'shape',
+        message: 'What is your shape?',
+        choices: ['square', 'triangle', 'circle']
+    },
+    {
+        type: 'input',
+        name: 'shapeColor',
+        message: 'What is your shape color?'
+    }
+])
