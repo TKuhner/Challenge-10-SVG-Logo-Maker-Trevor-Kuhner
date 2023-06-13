@@ -10,6 +10,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const SVG = require('./assets/lib/svg.js');
 
+
 inquirer
     .prompt([
         {
@@ -38,12 +39,12 @@ inquirer
         const svg = new SVG();
         svg.setText(text, textColor);
         svg.setShape(shape);
-        svg.setShapeColor(shapeColor);
-        fs.writeFileSync('./logo.svg', svg.render());
-        console.log('generated logo.svg');
-        console.log('opening logo.svg in browser');
-        const { exec } = require('child_process');
-        exec('start chrome logo.svg');     
+        svg.setColor(shapeColor);
+        console.log(svg.render());
+
+        fs.writeFile('logo.svg', svg.render(), function (err) { 
+        
+        });
 
     })
     
@@ -51,10 +52,3 @@ inquirer
     
     
     
-    .catch(error => {
-        if (error.isTtyError) {
-            console.log("Prompt couldn't be rendered in the current environment");
-        } else {
-            console.log('Something else went wrong');
-        }
-    });
