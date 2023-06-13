@@ -11,7 +11,7 @@ class SVG {
     // set shape color
     setColor(color) {
         this.svgShapeColor = color;
-        console.log(this.svgShapeColor);
+        console.log(this.svgShapeColor + " line 14");
     }
 
     // 
@@ -19,7 +19,13 @@ class SVG {
         switch (shape) {
             case "square":
                 const square = new Square();
+
+                console.log(this.svgShapeColor + " line 23");
+                
                 square.setColor(this.svgShapeColor);
+                
+                console.log(this.svgShapeColor + " line 27");
+                
                 this.svgShape = square.render();
                 break;
             case "triangle":

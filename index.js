@@ -38,8 +38,8 @@ inquirer
     .then( function ({text, textColor, shape, shapeColor}) {
         const svg = new SVG();
         svg.setText(text, textColor);
-        svg.setShape(shape);
         svg.setColor(shapeColor);
+        svg.setShape(shape);
         console.log(svg.render());
 
         fs.writeFile('logo.svg', svg.render(), function (err) { 
