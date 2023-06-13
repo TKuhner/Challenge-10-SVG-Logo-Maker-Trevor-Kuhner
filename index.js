@@ -8,7 +8,7 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Circle, Triangle, Square } = require('./assets/lib/shapes.js');
+const SVG = require('./assets/lib/svg.js');
 
 inquirer
     .prompt([
@@ -35,13 +35,15 @@ inquirer
         }
     ])
     .then( function ({text, textColor, shape, shapeColor}) {
-        console.log(text.length + "text length")
-        if (text.length >= 3) {
-            console.log("Text must not exceed 3 characters.");
-           return;
-        }
-        
-
+        const svg = new SVG();
+        svg.setText(text, textColor);
+        svg.setShape(shape);
+        svg.setShapeColor(shapeColor);
+        fs.writeFileSync('./logo.svg', svg.render());
+        console.log('generated logo.svg');
+        console.log('opening logo.svg in browser');
+        const { exec } = require('child_process');
+        exec('start chrome logo.svg');     
 
     })
     
