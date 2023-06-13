@@ -11,28 +11,23 @@ class SVG {
     // set shape color
     setColor(color) {
         this.svgShapeColor = color;
-        console.log(this.svgShapeColor + " line 14");
     }
 
     // 
     setShape(shape) {
         switch (shape) {
             case "square":
-                const square = new Square();
-
-                console.log(this.svgShapeColor + " line 23");
-                
+                const square = new Square();              
                 square.setColor(this.svgShapeColor);
-                
-                console.log(this.svgShapeColor + " line 27");
-                
                 this.svgShape = square.render();
                 break;
+
             case "triangle":
                 const triangle = new Triangle();
                 triangle.setColor(this.svgShapeColor);
                 this.svgShape = triangle.render();
                 break;
+
             case "circle":
                 const circle = new Circle();
                 circle.setColor(this.svgShapeColor);
