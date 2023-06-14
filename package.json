@@ -1,4 +1,15 @@
 {
+  
+  "name": "challenge-10-svg-logo-maker-trevor-kuhner",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^26.5.2"

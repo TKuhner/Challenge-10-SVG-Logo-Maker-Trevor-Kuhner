@@ -9,6 +9,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const SVG = require('./assets/lib/svg.js');
+const { Square, Triangle, Circle } = require("./assets/lib/shapes");
 
 
 inquirer
@@ -37,9 +38,30 @@ inquirer
     ])
     .then( function ({text, textColor, shape, shapeColor}) {
         const svg = new SVG();
+
         svg.setText(text, textColor);
         svg.setColor(shapeColor);
-        svg.setShape(shape);
+
+        switch (shape) {
+            case "square":
+                const square = new Square();
+                square.setColor(shapeColor);
+                svg.setShape(square);
+                break;
+            case "triangle":
+                const triangle = new Triangle();
+                triangle.setColor(shapeColor);
+                svg.setShape(triangle);
+                break;
+            case "circle":
+                const circle = new Circle();
+                circle.setColor(shapeColor);
+                svg.setShape(circle);
+                break;
+        }
+       
+
+        // svg.setShape(shape);
         console.log(svg.render());
 
         fs.writeFile('logo.svg', svg.render(), function (err) { 
