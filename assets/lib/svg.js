@@ -1,3 +1,5 @@
+const { Circle, Square, Triangle } = require("./shapes");
+
 // SVG class to assemble the SVG markup
 class SVG {
     constructor() {
