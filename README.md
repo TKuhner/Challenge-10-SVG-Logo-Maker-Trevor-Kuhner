@@ -46,6 +46,6 @@ This is a simple SVG logo generator script that allows you to create a logo by c
 
 Test cases were provided by Instructor and TAs:
    
-   - Samuel Adams
    - Poornima Sewak
+   - Samuel Adams
    - Dom Spadafora
