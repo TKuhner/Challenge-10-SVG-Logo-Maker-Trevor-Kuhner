@@ -15,7 +15,7 @@ This is a simple SVG logo generator script that allows you to create a logo by c
 2. Install the dependencies by running the following command in the project directory:
 
    ```shell
-   npm install inquirer svg.js
+   npm i inquirer@8.2.4
 
 3. Initialize the package by running the following command in the project directory:
 
