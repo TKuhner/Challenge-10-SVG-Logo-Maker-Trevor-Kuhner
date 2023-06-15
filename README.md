@@ -42,9 +42,10 @@ This is a simple SVG logo generator script that allows you to create a logo by c
 
     Open the logo.svg file in a web browser to view the generated logo.
 
-Customization
+## Contributions
 
-You can customize the script further by modifying the index.js, svg.js, and shapes.js files according to your requirements. Feel free to extend the functionality or change the design as needed.
-License
-
-This code is released under the MIT License.
+Test cases were provided by Instructor and TAs:
+   
+   - Samuel Adams
+   - Poornima Sewak
+   - Dom Spadafora
