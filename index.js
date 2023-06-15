@@ -1,17 +1,10 @@
-// prompt user for txt (up to 3 chars)
-// prompt user for color of text
-// prompt user for shape
-// prompt user for color of shape
-// take user input and render svg
-// print 'generated logo.svg' to console
-// open logo.svg in browser shows logo
-
+// paths to the files that are required
 const inquirer = require('inquirer');
 const fs = require('fs');
 const SVG = require('./assets/lib/svg.js');
 const { Square, Triangle, Circle } = require("./assets/lib/shapes");
 
-
+// Prompt the user for input
 inquirer
     .prompt([
         {
@@ -36,12 +29,14 @@ inquirer
             message: 'What is your shape color?'
         }
     ])
-    .then( function ({text, textColor, shape, shapeColor}) {
+    .then(function ({ text, textColor, shape, shapeColor }) {
         const svg = new SVG();
 
+        // Set the text and its color in the SVG
         svg.setText(text, textColor);
         svg.setColor(shapeColor);
 
+        // Set the shape based on user choice and its color in the SVG
         switch (shape) {
             case "square":
                 const square = new Square();
@@ -59,18 +54,11 @@ inquirer
                 svg.setShape(circle);
                 break;
         }
-       
 
-        // svg.setShape(shape);
-        console.log(svg.render());
+        // Write the SVG markup to a file
+        fs.writeFile('logo.svg', svg.render(), function (err) {
+            if (err) throw err;
 
-        fs.writeFile('logo.svg', svg.render(), function (err) { 
-        
+            console.log('File is created successfully.');
         });
-
-    })
-    
-    
-    
-    
-    
+});

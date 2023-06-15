@@ -1,6 +1,4 @@
-const { kill } = require("process");
-const { Square, Triangle, Circle } = require("./shapes");
-
+// SVG class to assemble the SVG markup
 class SVG {
     constructor() {
         this.svgText = "";
