@@ -1,5 +1,9 @@
 # Challenge-10-SVG-Logo-Maker-Trevor-Kuhner
 
+https://github.com/TKuhner/Challenge-10-SVG-Logo-Maker-Trevor-Kuhner/assets/71107536/eefcbf56-c340-4cae-98e6-622225a8cebb
+
+
+
 # SVG Logo Generator
 
 This is a simple SVG logo generator script that allows you to create a logo by choosing a shape, its color, and adding text with a specified color. The generated logo is saved as an SVG file and can be opened in a web browser to view the logo.
